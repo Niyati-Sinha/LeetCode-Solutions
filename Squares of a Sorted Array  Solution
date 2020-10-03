@@ -1,6 +1,24 @@
+//way 1- 70 % more time efficient and 90% more memory optimized than other solutions on leetcode
+
+
+class Solution {
+    public int[] sortedSquares(int[] A) 
+    {
+        
+        for (int i=0;i<A.length;i++)
+        {
+            A[i]=A[i]*A[i];
+        }
+        Arrays.sort(A);
+        
+        return A;
+    }
+}
+
+
 
 //way 2- 99% more memory optimized than other solutions on leetcode
-
+/*
 class Solution {
     public int[] sortedSquares(int[] A) 
     {
@@ -27,7 +45,7 @@ class Solution {
         return A;
     }
 }
-
+*/
 
 
 //way 3- 99% more memory optimized than other solutions on leetcode
