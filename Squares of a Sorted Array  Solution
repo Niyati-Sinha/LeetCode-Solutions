@@ -48,7 +48,66 @@ class Solution {
 */
 
 
-//way 3- 99% more memory optimized than other solutions on leetcode
+//way 4- 99% more memory optimized than other solutions on leetcode
+
+/*
+class Solution {
+    public int[] sortedSquares(int[] A) 
+    {
+        int in=-1;
+        for (int i=0;i<A.length;i++)
+        {
+            if(A[i]>0)
+            {
+                in=i-1;
+                break;
+            }
+        }
+        int res[]=new int[A.length];
+        int last=A.length-1,first=0;
+        int i,flag=0;
+        for(i=A.length-1;i>=0;)
+        {
+            if(Math.abs(A[last])>=Math.abs(A[first]))
+            {
+                res[i--]=A[last];
+                if(last!=in+1)
+                    last--;
+                else{
+                    
+                    flag=1;//no more positive no.s to be inserted
+                    break;
+                }
+            }
+            else 
+            {
+                res[i--]=A[first];
+                if(first!=in)
+                    first++;
+                else
+                {
+                    flag=-1;//no more negative no.s to be inserted
+                    break;
+                }
+             }
+        }
+        if(flag==1)
+            while(i!=-1)
+                res[i--]=A[first++];
+        else if(flag==-1)
+            while(i!=-1)
+                res[i--]=A[last--];
+       for (int p=0;p<A.length;p++)
+           res[p]=res[p]*res[p];        
+        
+        return res;
+    }
+}
+*/
+
+
+
+//way 4- 99% more memory optimized than other solutions on leetcode
 
 /*
 class Solution {
