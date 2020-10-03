@@ -1,0 +1,25 @@
+class Solution {
+    public static int count_digits(int n)
+    {
+        int digit=0;
+        while(n!=0)
+        {
+            n=n/10;
+            digit++;
+        }
+        return digit;
+    }
+   
+    public int findNumbers(int[] nums) 
+    {
+        int even_count=0;
+        for(int i=0; i<nums.length;i++)
+        {
+       
+            if(count_digits(nums[i])%2==0)
+                even_count++;
+      
+        }
+        return even_count++;
+    }
+}
