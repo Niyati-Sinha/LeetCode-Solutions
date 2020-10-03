@@ -1,3 +1,6 @@
+
+//way 2- 99% more memory optimized than other solutions on leetcode
+
 class Solution {
     public int[] sortedSquares(int[] A) 
     {
@@ -24,3 +27,41 @@ class Solution {
         return A;
     }
 }
+
+
+
+//way 3- 99% more memory optimized than other solutions on leetcode
+
+/*
+class Solution {
+    public int[] sortedSquares(int[] A) 
+    {
+        int in=-1,flag=0;
+        for (int i=A.length-1;i>=0;i--)
+        {
+            
+            if(flag!=1 && A[i]<0)
+            {
+                in=i;   //point to last negative ellements index
+                flag=1;
+            }
+            A[i]=A[i]*A[i];
+            
+        }
+        for (int j=in,k=j; j>=0 && k+1<A.length;)   
+        {
+            k=j;
+            while(A[k]>A[k+1])
+            {
+                int temp=A[k];
+                A[k]=A[k+1];
+                A[k+1]=temp;
+                if((k+1)!=A.length-1)
+                    k++;
+            }
+            j--;
+        }
+        return A;
+    }
+}
+*/
